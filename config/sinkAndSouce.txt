@@ -1,0 +1,952 @@
+% Android Logging Libraries - Sink Methods for Taint Analysis
+
+% 1. Timber (Jake Wharton)
+<timber.log.Timber: void v(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void v(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void v(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber: void d(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void d(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void d(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber: void i(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void i(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void i(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber: void w(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void w(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void w(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber: void e(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void e(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void e(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber: void wtf(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void wtf(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void wtf(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber: void log(int,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void log(int,java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber: void log(int,java.lang.Throwable)> -> _SINK_
+<timber.log.Timber$Tree: void v(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void v(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void v(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber$Tree: void d(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void d(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void d(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber$Tree: void i(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void i(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void i(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber$Tree: void w(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void w(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void w(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber$Tree: void e(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void e(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void e(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber$Tree: void wtf(java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void wtf(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void wtf(java.lang.Throwable)> -> _SINK_
+<timber.log.Timber$Tree: void log(int,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void log(int,java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<timber.log.Timber$Tree: void log(int,java.lang.Throwable)> -> _SINK_
+
+% 2. Logger (orhanobut)
+<com.orhanobut.logger.Logger: void v(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.orhanobut.logger.Logger: void v(java.lang.Object)> -> _SINK_
+<com.orhanobut.logger.Logger: void d(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.orhanobut.logger.Logger: void d(java.lang.Object)> -> _SINK_
+<com.orhanobut.logger.Logger: void i(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.orhanobut.logger.Logger: void i(java.lang.Object)> -> _SINK_
+<com.orhanobut.logger.Logger: void w(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.orhanobut.logger.Logger: void w(java.lang.Object)> -> _SINK_
+<com.orhanobut.logger.Logger: void e(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.orhanobut.logger.Logger: void e(java.lang.Throwable)> -> _SINK_
+<com.orhanobut.logger.Logger: void e(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<com.orhanobut.logger.Logger: void wtf(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.orhanobut.logger.Logger: void wtf(java.lang.Object)> -> _SINK_
+<com.orhanobut.logger.Logger: void json(java.lang.String)> -> _SINK_
+<com.orhanobut.logger.Logger: void xml(java.lang.String)> -> _SINK_
+<com.orhanobut.logger.Logger: void log(int,java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.orhanobut.logger.Logger: void log(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.orhanobut.logger.AndroidLogAdapter: void log(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.orhanobut.logger.DiskLogAdapter: void log(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.orhanobut.logger.LogAdapter: void log(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.orhanobut.logger.Printer: void log(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.orhanobut.logger.PrettyFormatStrategy: void log(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.orhanobut.logger.CsvFormatStrategy: void log(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.orhanobut.logger.FormatStrategy: void log(int,java.lang.String,java.lang.String)> -> _SINK_
+
+% 3. Log4j 
+<org.apache.logging.log4j.Logger: void trace(java.lang.String)> -> _SINK_
+<org.apache.logging.log4j.Logger: void trace(java.lang.String,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void trace(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void trace(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.apache.logging.log4j.Logger: void trace(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.apache.logging.log4j.Logger: void debug(java.lang.String)> -> _SINK_
+<org.apache.logging.log4j.Logger: void debug(java.lang.String,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void debug(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void debug(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.apache.logging.log4j.Logger: void debug(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.apache.logging.log4j.Logger: void info(java.lang.String)> -> _SINK_
+<org.apache.logging.log4j.Logger: void info(java.lang.String,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void info(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void info(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.apache.logging.log4j.Logger: void info(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.apache.logging.log4j.Logger: void warn(java.lang.String)> -> _SINK_
+<org.apache.logging.log4j.Logger: void warn(java.lang.String,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void warn(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void warn(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.apache.logging.log4j.Logger: void warn(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.apache.logging.log4j.Logger: void error(java.lang.String)> -> _SINK_
+<org.apache.logging.log4j.Logger: void error(java.lang.String,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void error(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void error(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.apache.logging.log4j.Logger: void error(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.apache.logging.log4j.Logger: void fatal(java.lang.String)> -> _SINK_
+<org.apache.logging.log4j.Logger: void fatal(java.lang.String,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void fatal(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void fatal(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.apache.logging.log4j.Logger: void fatal(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.apache.logging.log4j.Logger: void log(org.apache.logging.log4j.Level,java.lang.String)> -> _SINK_
+<org.apache.logging.log4j.Logger: void log(org.apache.logging.log4j.Level,java.lang.String,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void log(org.apache.logging.log4j.Level,java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.apache.logging.log4j.Logger: void log(org.apache.logging.log4j.Level,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.apache.logging.log4j.Logger: void log(org.apache.logging.log4j.Level,java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.apache.logging.log4j.LogManager: void log(java.lang.String)> -> _SINK_
+
+% 4. SLF4J
+<org.slf4j.Logger: void trace(java.lang.String)> -> _SINK_
+<org.slf4j.Logger: void trace(java.lang.String,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void trace(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void trace(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.slf4j.Logger: void trace(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.slf4j.Logger: void debug(java.lang.String)> -> _SINK_
+<org.slf4j.Logger: void debug(java.lang.String,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void debug(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void debug(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.slf4j.Logger: void debug(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.slf4j.Logger: void info(java.lang.String)> -> _SINK_
+<org.slf4j.Logger: void info(java.lang.String,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void info(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void info(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.slf4j.Logger: void info(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.slf4j.Logger: void warn(java.lang.String)> -> _SINK_
+<org.slf4j.Logger: void warn(java.lang.String,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void warn(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void warn(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.slf4j.Logger: void warn(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.slf4j.Logger: void error(java.lang.String)> -> _SINK_
+<org.slf4j.Logger: void error(java.lang.String,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void error(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<org.slf4j.Logger: void error(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.slf4j.Logger: void error(java.lang.String,java.lang.Throwable)> -> _SINK_
+<org.slf4j.LoggerFactory: org.slf4j.Logger getLogger(java.lang.String)> -> _SINK_
+<org.slf4j.LoggerFactory: org.slf4j.Logger getLogger(java.lang.Class)> -> _SINK_
+<org.slf4j.Logger: void debug(org.slf4j.Marker,java.lang.String)> -> _SINK_
+<org.slf4j.Logger: void info(org.slf4j.Marker,java.lang.String,java.lang.Object)> -> _SINK_
+
+% 5. XLog Main Class - All method variations
+<com.elvishew.xlog.XLog: void v(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.XLog: void v(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void v(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void v(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog: void v(java.lang.String,java.lang.Throwable)> -> _SINK_
+
+<com.elvishew.xlog.XLog: void d(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.XLog: void d(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void d(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void d(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog: void d(java.lang.String,java.lang.Throwable)> -> _SINK_
+
+<com.elvishew.xlog.XLog: void i(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.XLog: void i(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void i(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void i(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog: void i(java.lang.String,java.lang.Throwable)> -> _SINK_
+
+<com.elvishew.xlog.XLog: void w(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.XLog: void w(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void w(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void w(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog: void w(java.lang.String,java.lang.Throwable)> -> _SINK_
+
+<com.elvishew.xlog.XLog: void e(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.XLog: void e(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void e(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void e(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog: void e(java.lang.String,java.lang.Throwable)> -> _SINK_
+
+% Generic log methods with specific log level
+<com.elvishew.xlog.XLog: void log(int,java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.XLog: void log(int,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void log(int,java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.XLog: void log(int,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog: void log(int,java.lang.String,java.lang.Throwable)> -> _SINK_
+
+% Specialized formatting methods
+<com.elvishew.xlog.XLog: void json(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog: void xml(java.lang.String)> -> _SINK_
+
+% XLog.Log compatibility class (Android Log compatible)
+<com.elvishew.xlog.XLog$Log: void v(java.lang.String,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void v(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void d(java.lang.String,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void d(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void i(java.lang.String,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void i(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void w(java.lang.String,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void w(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void w(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void e(java.lang.String,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void e(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void wtf(java.lang.String,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void wtf(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void wtf(java.lang.String,java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.XLog$Log: void println(int,java.lang.String,java.lang.String)> -> _SINK_
+
+% Logger class (since XLog delegates to sLogger.method())
+<com.elvishew.xlog.Logger: void v(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.Logger: void v(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void v(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void v(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.Logger: void v(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.Logger: void d(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.Logger: void d(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void d(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void d(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.Logger: void d(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.Logger: void i(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.Logger: void i(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void i(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void i(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.Logger: void i(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.Logger: void w(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.Logger: void w(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void w(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void w(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.Logger: void w(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.Logger: void e(java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.Logger: void e(java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void e(java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void e(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.Logger: void e(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.Logger: void log(int,java.lang.Object)> -> _SINK_
+<com.elvishew.xlog.Logger: void log(int,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void log(int,java.lang.String,java.lang.Object[])> -> _SINK_
+<com.elvishew.xlog.Logger: void log(int,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.Logger: void log(int,java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.elvishew.xlog.Logger: void json(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.Logger: void xml(java.lang.String)> -> _SINK_
+<com.elvishew.xlog.Logger: void println(int,java.lang.String)> -> _SINK_
+
+% Printer implementations (keep existing ones)
+<com.elvishew.xlog.printer.Printer: void println(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.printer.AndroidPrinter: void println(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.printer.ConsolePrinter: void println(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.elvishew.xlog.printer.FilePrinter: void println(int,java.lang.String,java.lang.String)> -> _SINK_
+
+
+% 6. KLog Main Logging Methods - All log levels (v, d, i, w, e, a)
+<com.socks.library.KLog: void v()> -> _SINK_
+<com.socks.library.KLog: void v(java.lang.Object)> -> _SINK_
+<com.socks.library.KLog: void v(java.lang.String,java.lang.Object[])> -> _SINK_
+
+<com.socks.library.KLog: void d()> -> _SINK_
+<com.socks.library.KLog: void d(java.lang.Object)> -> _SINK_
+<com.socks.library.KLog: void d(java.lang.String,java.lang.Object[])> -> _SINK_
+
+<com.socks.library.KLog: void i()> -> _SINK_
+<com.socks.library.KLog: void i(java.lang.Object)> -> _SINK_
+<com.socks.library.KLog: void i(java.lang.String,java.lang.Object[])> -> _SINK_
+
+<com.socks.library.KLog: void w()> -> _SINK_
+<com.socks.library.KLog: void w(java.lang.Object)> -> _SINK_
+<com.socks.library.KLog: void w(java.lang.String,java.lang.Object[])> -> _SINK_
+
+<com.socks.library.KLog: void e()> -> _SINK_
+<com.socks.library.KLog: void e(java.lang.Object)> -> _SINK_
+<com.socks.library.KLog: void e(java.lang.String,java.lang.Object[])> -> _SINK_
+
+<com.socks.library.KLog: void a()> -> _SINK_
+<com.socks.library.KLog: void a(java.lang.Object)> -> _SINK_
+<com.socks.library.KLog: void a(java.lang.String,java.lang.Object[])> -> _SINK_
+
+% JSON and XML formatting methods
+<com.socks.library.KLog: void json(java.lang.String)> -> _SINK_
+<com.socks.library.KLog: void json(java.lang.String,java.lang.String)> -> _SINK_
+<com.socks.library.KLog: void xml(java.lang.String)> -> _SINK_
+<com.socks.library.KLog: void xml(java.lang.String,java.lang.String)> -> _SINK_
+
+% File logging methods
+<com.socks.library.KLog: void file(java.io.File,java.lang.Object)> -> _SINK_
+<com.socks.library.KLog: void file(java.lang.String,java.io.File,java.lang.Object)> -> _SINK_
+<com.socks.library.KLog: void file(java.lang.String,java.io.File,java.lang.String,java.lang.Object)> -> _SINK_
+
+% Debug methods (always-on logging)
+<com.socks.library.KLog: void debug()> -> _SINK_
+<com.socks.library.KLog: void debug(java.lang.Object)> -> _SINK_
+<com.socks.library.KLog: void debug(java.lang.String,java.lang.Object[])> -> _SINK_
+
+% Stack trace method
+<com.socks.library.KLog: void trace()> -> _SINK_
+
+% Internal logging classes that KLog delegates to
+<com.socks.library.klog.BaseLog: void printDefault(int,java.lang.String,java.lang.String)> -> _SINK_
+<com.socks.library.klog.JsonLog: void printJson(java.lang.String,java.lang.String,java.lang.String)> -> _SINK_
+<com.socks.library.klog.XmlLog: void printXml(java.lang.String,java.lang.String,java.lang.String)> -> _SINK_
+<com.socks.library.klog.FileLog: void printFile(java.lang.String,java.io.File,java.lang.String,java.lang.String,java.lang.String)> -> _SINK_
+
+% 7. Tinylog Core Logger - Complete Method Coverage
+
+% TRACE Level Methods
+<org.tinylog.Logger: void trace(java.lang.Object)> -> _SINK_
+<org.tinylog.Logger: void trace(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void trace(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void trace(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.Logger: void trace(java.lang.Throwable)> -> _SINK_
+<org.tinylog.Logger: void trace(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.Logger: void trace(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void trace(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void trace(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+% DEBUG Level Methods
+<org.tinylog.Logger: void debug(java.lang.Object)> -> _SINK_
+<org.tinylog.Logger: void debug(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void debug(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void debug(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.Logger: void debug(java.lang.Throwable)> -> _SINK_
+<org.tinylog.Logger: void debug(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.Logger: void debug(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void debug(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void debug(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+% INFO Level Methods
+<org.tinylog.Logger: void info(java.lang.Object)> -> _SINK_
+<org.tinylog.Logger: void info(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void info(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void info(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.Logger: void info(java.lang.Throwable)> -> _SINK_
+<org.tinylog.Logger: void info(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.Logger: void info(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void info(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void info(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+% WARN Level Methods
+<org.tinylog.Logger: void warn(java.lang.Object)> -> _SINK_
+<org.tinylog.Logger: void warn(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void warn(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void warn(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.Logger: void warn(java.lang.Throwable)> -> _SINK_
+<org.tinylog.Logger: void warn(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.Logger: void warn(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void warn(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void warn(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+% ERROR Level Methods
+<org.tinylog.Logger: void error(java.lang.Object)> -> _SINK_
+<org.tinylog.Logger: void error(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void error(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void error(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.Logger: void error(java.lang.Throwable)> -> _SINK_
+<org.tinylog.Logger: void error(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.Logger: void error(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.Logger: void error(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.Logger: void error(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+% TaggedLogger - Important for tag-based logging
+<org.tinylog.TaggedLogger: void trace(java.lang.Object)> -> _SINK_
+<org.tinylog.TaggedLogger: void trace(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void trace(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void trace(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.TaggedLogger: void trace(java.lang.Throwable)> -> _SINK_
+<org.tinylog.TaggedLogger: void trace(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.TaggedLogger: void trace(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void trace(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void trace(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+<org.tinylog.TaggedLogger: void debug(java.lang.Object)> -> _SINK_
+<org.tinylog.TaggedLogger: void debug(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void debug(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void debug(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.TaggedLogger: void debug(java.lang.Throwable)> -> _SINK_
+<org.tinylog.TaggedLogger: void debug(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.TaggedLogger: void debug(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void debug(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void debug(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+<org.tinylog.TaggedLogger: void info(java.lang.Object)> -> _SINK_
+<org.tinylog.TaggedLogger: void info(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void info(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void info(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.TaggedLogger: void info(java.lang.Throwable)> -> _SINK_
+<org.tinylog.TaggedLogger: void info(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.TaggedLogger: void info(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void info(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void info(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+<org.tinylog.TaggedLogger: void warn(java.lang.Object)> -> _SINK_
+<org.tinylog.TaggedLogger: void warn(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void warn(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void warn(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.TaggedLogger: void warn(java.lang.Throwable)> -> _SINK_
+<org.tinylog.TaggedLogger: void warn(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.TaggedLogger: void warn(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void warn(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void warn(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+<org.tinylog.TaggedLogger: void error(java.lang.Object)> -> _SINK_
+<org.tinylog.TaggedLogger: void error(java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void error(java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void error(java.lang.String,java.util.function.Supplier[])> -> _SINK_
+<org.tinylog.TaggedLogger: void error(java.lang.Throwable)> -> _SINK_
+<org.tinylog.TaggedLogger: void error(java.lang.Throwable,java.lang.String)> -> _SINK_
+<org.tinylog.TaggedLogger: void error(java.lang.Throwable,java.util.function.Supplier)> -> _SINK_
+<org.tinylog.TaggedLogger: void error(java.lang.Throwable,java.lang.String,java.lang.Object[])> -> _SINK_
+<org.tinylog.TaggedLogger: void error(java.lang.Throwable,java.lang.String,java.util.function.Supplier[])> -> _SINK_
+
+% Core LoggingProvider - What all Logger calls delegate to
+<org.tinylog.provider.LoggingProvider: void log(int,java.lang.String,org.tinylog.Level,java.lang.Throwable,org.tinylog.format.MessageFormatter,java.lang.Object,java.lang.Object[])> -> _SINK_
+
+% 8. Logback Classic Logger - Complete SLF4J Implementation
+
+% TRACE Level Methods
+<ch.qos.logback.classic.Logger: void trace(java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void trace(java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void trace(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void trace(java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void trace(java.lang.String,java.lang.Throwable)> -> _SINK_
+<ch.qos.logback.classic.Logger: void trace(org.slf4j.Marker,java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void trace(org.slf4j.Marker,java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void trace(org.slf4j.Marker,java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void trace(org.slf4j.Marker,java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void trace(org.slf4j.Marker,java.lang.String,java.lang.Throwable)> -> _SINK_
+
+% DEBUG Level Methods
+<ch.qos.logback.classic.Logger: void debug(java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void debug(java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void debug(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void debug(java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void debug(java.lang.String,java.lang.Throwable)> -> _SINK_
+<ch.qos.logback.classic.Logger: void debug(org.slf4j.Marker,java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void debug(org.slf4j.Marker,java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void debug(org.slf4j.Marker,java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void debug(org.slf4j.Marker,java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void debug(org.slf4j.Marker,java.lang.String,java.lang.Throwable)> -> _SINK_
+
+% INFO Level Methods
+<ch.qos.logback.classic.Logger: void info(java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void info(java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void info(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void info(java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void info(java.lang.String,java.lang.Throwable)> -> _SINK_
+<ch.qos.logback.classic.Logger: void info(org.slf4j.Marker,java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void info(org.slf4j.Marker,java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void info(org.slf4j.Marker,java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void info(org.slf4j.Marker,java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void info(org.slf4j.Marker,java.lang.String,java.lang.Throwable)> -> _SINK_
+
+% WARN Level Methods
+<ch.qos.logback.classic.Logger: void warn(java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void warn(java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void warn(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void warn(java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void warn(java.lang.String,java.lang.Throwable)> -> _SINK_
+<ch.qos.logback.classic.Logger: void warn(org.slf4j.Marker,java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void warn(org.slf4j.Marker,java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void warn(org.slf4j.Marker,java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void warn(org.slf4j.Marker,java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void warn(org.slf4j.Marker,java.lang.String,java.lang.Throwable)> -> _SINK_
+
+% ERROR Level Methods
+<ch.qos.logback.classic.Logger: void error(java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void error(java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void error(java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void error(java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void error(java.lang.String,java.lang.Throwable)> -> _SINK_
+<ch.qos.logback.classic.Logger: void error(org.slf4j.Marker,java.lang.String)> -> _SINK_
+<ch.qos.logback.classic.Logger: void error(org.slf4j.Marker,java.lang.String,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void error(org.slf4j.Marker,java.lang.String,java.lang.Object,java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.Logger: void error(org.slf4j.Marker,java.lang.String,java.lang.Object[])> -> _SINK_
+<ch.qos.logback.classic.Logger: void error(org.slf4j.Marker,java.lang.String,java.lang.Throwable)> -> _SINK_
+
+% LocationAwareLogger method - The actual log() method that exists
+<ch.qos.logback.classic.Logger: void log(org.slf4j.Marker,java.lang.String,int,java.lang.String,java.lang.Object[],java.lang.Throwable)> -> _SINK_
+
+% SLF4J Event logging - Modern logging approach
+<ch.qos.logback.classic.Logger: void log(org.slf4j.event.LoggingEvent)> -> _SINK_
+
+% Core infrastructure methods - What logger methods delegate to
+<ch.qos.logback.classic.Logger: void callAppenders(ch.qos.logback.classic.spi.ILoggingEvent)> -> _SINK_
+<ch.qos.logback.classic.Logger: void buildLoggingEventAndAppend(java.lang.String,org.slf4j.Marker,ch.qos.logback.classic.Level,java.lang.String,java.lang.Object[],java.lang.Throwable)> -> _SINK_
+
+% Appender methods (keep existing ones, they're correct)
+<ch.qos.logback.core.FileAppender: void doAppend(java.lang.Object)> -> _SINK_
+<ch.qos.logback.core.ConsoleAppender: void doAppend(java.lang.Object)> -> _SINK_
+<ch.qos.logback.core.OutputStreamAppender: void writeOut(java.lang.Object)> -> _SINK_
+<ch.qos.logback.core.rolling.RollingFileAppender: void doAppend(java.lang.Object)> -> _SINK_
+<ch.qos.logback.classic.android.LogcatAppender: void doAppend(java.lang.Object)> -> _SINK_
+
+% Additional common appenders
+<ch.qos.logback.core.AppenderBase: void doAppend(java.lang.Object)> -> _SINK_
+<ch.qos.logback.core.spi.AppenderAttachableImpl: int appendLoopOnAppenders(java.lang.Object)> -> _SINK_
+
+% 9. Chucker Internal Logger Interface Methods (isChecked)
+<com.chuckerteam.chucker.internal.support.Logger: void info(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.chuckerteam.chucker.internal.support.Logger: void info(java.lang.String)> -> _SINK_
+<com.chuckerteam.chucker.internal.support.Logger: void warn(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.chuckerteam.chucker.internal.support.Logger: void warn(java.lang.String)> -> _SINK_
+<com.chuckerteam.chucker.internal.support.Logger: void error(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.chuckerteam.chucker.internal.support.Logger: void error(java.lang.String)> -> _SINK_
+
+% Chucker Main API Logger (what the companion object delegates to)
+<com.chuckerteam.chucker.api.Chucker: void info(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.chuckerteam.chucker.api.Chucker: void info(java.lang.String)> -> _SINK_
+<com.chuckerteam.chucker.api.Chucker: void warn(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.chuckerteam.chucker.api.Chucker: void warn(java.lang.String)> -> _SINK_
+<com.chuckerteam.chucker.api.Chucker: void error(java.lang.String,java.lang.Throwable)> -> _SINK_
+<com.chuckerteam.chucker.api.Chucker: void error(java.lang.String)> -> _SINK_
+
+% 10. Firebase and Google Authentication
+<com.google.firebase.auth.FirebaseUser: java.lang.String getUid()> -> _SOURCE_
+<com.google.firebase.auth.FirebaseUser: java.lang.String getDisplayName()> -> _SOURCE_
+<com.google.firebase.auth.FirebaseUser: java.lang.String getEmail()> -> _SOURCE_
+<com.google.firebase.auth.FirebaseUser: android.net.Uri getPhotoUrl()> -> _SOURCE_
+<com.google.firebase.auth.FirebaseUser: java.lang.String getPhoneNumber()> -> _SOURCE_
+<com.google.firebase.auth.FirebaseUser: java.util.List getProviderData()> -> _SOURCE_
+<com.google.firebase.auth.FirebaseUser: com.google.firebase.auth.GetTokenResult getIdToken(boolean)> -> _SOURCE_
+<com.google.firebase.auth.GetTokenResult: java.lang.String getToken()> -> _SOURCE_
+<com.google.android.gms.auth.api.signin.GoogleSignInAccount: java.lang.String getId()> -> _SOURCE_
+<com.google.android.gms.auth.api.signin.GoogleSignInAccount: java.lang.String getIdToken()> -> _SOURCE_
+<com.google.android.gms.auth.api.signin.GoogleSignInAccount: java.lang.String getEmail()> -> _SOURCE_
+<com.google.android.gms.auth.api.signin.GoogleSignInAccount: java.lang.String getDisplayName()> -> _SOURCE_
+<com.google.android.gms.auth.api.signin.GoogleSignInAccount: java.lang.String getGivenName()> -> _SOURCE_
+<com.google.android.gms.auth.api.signin.GoogleSignInAccount: java.lang.String getFamilyName()> -> _SOURCE_
+<com.google.android.gms.auth.api.signin.GoogleSignInAccount: android.net.Uri getPhotoUrl()> -> _SOURCE_
+
+% Firebase Analytics (logging events)
+<com.google.firebase.analytics.FirebaseAnalytics: void logEvent(java.lang.String,android.os.Bundle)> -> _SINK_
+<com.google.firebase.analytics.FirebaseAnalytics: void setUserId(java.lang.String)> -> _SINK_
+<com.google.firebase.analytics.FirebaseAnalytics: void setUserProperty(java.lang.String,java.lang.String)> -> _SINK_
+
+% Firebase Performance
+<com.google.firebase.perf.metrics.Trace: void putMetric(java.lang.String,long)> -> _SINK_
+<com.google.firebase.perf.metrics.HttpMetric: void putAttribute(java.lang.String,java.lang.String)> -> _SINK_
+<com.google.firebase.perf.metrics.Trace: void putAttribute(java.lang.String,java.lang.String)> -> _SINK_
+
+
+
+% SOURCE part
+
+% SUSI SOURCE
+<javax.servlet.ServletRequest: java.lang.String getParameter(java.lang.String)> -> _SOURCE_
+<org.springframework.security.config.http.CsrfBeanDefinitionParser: org.springframework.beans.factory.config.BeanDefinition getCsrfLogoutHandler()> -> _SOURCE_
+<org.springframework.security.config.authentication.CachingUserDetailsService: org.springframework.security.core.userdetails.UserDetails loadUserByUsername(java.lang.String)> -> _SOURCE_
+<org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper: org.springframework.security.core.userdetails.UserDetails loadUserDetails(org.springframework.security.core.Authentication)> -> _SOURCE_
+<java.io.File: java.io.File getAbsoluteFile()> -> _SOURCE_
+<org.apache.commons.jxpath.ri.parser.XPathParser: java.lang.String unescape(java.lang.String)> -> _SOURCE_
+<org.springframework.security.config.http.FormLoginBeanDefinitionParser: java.lang.String getLoginPage()> -> _SOURCE_
+<org.apache.xmlrpc.webserver.HttpServletRequestImpl: java.lang.String getRealPath(java.lang.String)> -> _SOURCE_
+<com.google.auth.oauth2.UserCredentials: java.lang.String getClientSecret()> -> _SOURCE_
+<org.springframework.web.servlet.tags.UrlTag: java.lang.String createQueryString(java.util.List,java.util.Set,boolean)> -> _SOURCE_
+<org.springframework.messaging.simp.stomp.StompDecoder: java.lang.String unescape(java.lang.String)> -> _SOURCE_
+<org.springframework.web.servlet.tags.UrlTag: java.lang.String createUrl()> -> _SOURCE_
+<java.io.File: java.io.File getCanonicalFile()> -> _SOURCE_
+<org.apache.commons.jxpath.ri.JXPathContextReferenceImpl: java.lang.Object getValue(java.lang.String)> -> _SOURCE_
+<org.apache.xmlrpc.webserver.RequestData: java.lang.String getMethod()> -> _SOURCE_
+<com.google.auth.oauth2.DefaultCredentialsProvider: com.google.auth.oauth2.GoogleCredentials getDefaultCredentials(com.google.api.client.http.HttpTransport)> -> _SOURCE_
+<org.jsoup.nodes.Entities: java.lang.String unescape(java.lang.String)> -> _SOURCE_
+<org.springframework.util.DefaultPropertiesPersister: java.lang.String unescape(java.lang.String)> -> _SOURCE_
+<org.owasp.webgoat.plugins.Plugin: void loadFiles(java.nio.file.Path)> -> _SOURCE_
+<org.apache.xmlrpc.webserver.HttpServletResponseImpl: java.lang.String getHeader(java.lang.String)> -> _SOURCE_
+<com.google.auth.oauth2.UserAuthorizer: com.google.auth.oauth2.UserCredentials getCredentialsFromCode(java.lang.String,java.net.URI)> -> _SOURCE_
+<org.dmfs.oauth2.client.http.requests.ResourceOwnerPasswordTokenRequest: org.dmfs.httpclient.HttpRequestEntity requestEntity()> -> _SOURCE_
+<org.owasp.webgoat.util.HtmlEncoder: java.lang.String decode(java.lang.String)> -> _SOURCE_
+<javax.naming.ldap.Rdn: java.lang.Object unescapeValue(java.lang.String)> -> _SOURCE_
+<org.apache.xmlrpc.webserver.XmlRpcServletServer: org.apache.xmlrpc.common.XmlRpcHttpRequestConfigImpl getConfig(javax.servlet.http.HttpServletRequest)> -> _SOURCE_
+<org.apache.xmlrpc.webserver.HttpServletRequestImpl: void parsePostData(java.util.Map,java.io.InputStream,java.lang.String)> -> _SOURCE_
+<org.springframework.security.concurrent.DelegatingSecurityContextExecutorService: java.util.concurrent.ExecutorService getDelegate()> -> _SOURCE_
+<org.springframework.security.config.annotation.web.builders.HttpSecurity: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer headers()> -> _SOURCE_
+<org.springframework.web.servlet.tags.EscapeBodyTag: java.lang.String readBodyContent()> -> _SOURCE_
+<org.springframework.web.util.UrlPathHelper: java.lang.String decodeRequestString(javax.servlet.http.HttpServletRequest,java.lang.String)> -> _SOURCE_
+<org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder: org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder requestAttr(java.lang.String,java.lang.Object)> -> _SOURCE_
+<com.google.auth.oauth2.UserAuthorizer: com.google.auth.oauth2.UserCredentials getCredentials(java.lang.String)> -> _SOURCE_
+<org.springframework.web.socket.sockjs.transport.handler.JsonpReceivingTransportHandler: java.lang.String[] readMessages(org.springframework.http.server.ServerHttpRequest)> -> _SOURCE_
+<com.google.auth.oauth2.DefaultCredentialsProvider: com.google.auth.oauth2.GoogleCredentials getDefaultCredentialsUnsynchronized(com.google.api.client.http.HttpTransport)> -> _SOURCE_
+<org.springframework.security.config.http.FormLoginBeanDefinitionParser: java.lang.String getLoginProcessingUrl()> -> _SOURCE_
+<org.apache.xmlrpc.webserver.HttpServletRequestImpl: java.lang.String readLine(byte[])> -> _SOURCE_
+<org.springframework.security.config.http.LogoutBeanDefinitionParser: org.springframework.beans.factory.config.BeanDefinition getLogoutRequestMatcher(java.lang.String)> -> _SOURCE_
+<org.springframework.security.config.annotation.web.configurers.LogoutConfigurer: java.util.List getLogoutHandlers()> -> _SOURCE_
+<org.apache.xmlrpc.webserver.RequestData: java.lang.String getHttpVersion()> -> _SOURCE_
+<com.novell.ldap.rfc2251.RfcFilter: byte[] unescapeString(java.lang.String)> -> _SOURCE_
+<org.springframework.web.socket.config.HandlersBeanDefinitionParser: org.springframework.beans.factory.config.BeanDefinition parse(org.w3c.dom.Element,org.springframework.beans.factory.xml.ParserContext)> -> _SOURCE_
+<com.google.auth.oauth2.DefaultCredentialsProvider: java.io.File getWellKnownCredentialsFile()> -> _SOURCE_
+<org.apache.xmlrpc.webserver.HttpServletRequestImpl: void parseParameters()> -> _SOURCE_
+<org.jsoup.parser.Parser: org.jsoup.nodes.Document parse(java.lang.String,java.lang.String)> -> _SOURCE_
+<javax.servlet.ServletRequestWrapper: java.lang.String getParameter(java.lang.String)> -> _SOURCE_
+    
+<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()> -> _SOURCE_
+<org.apache.http.util.EntityUtils: java.lang.String toString(org.apache.http.HttpEntity)> -> _SOURCE_
+<org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine()> -> _SOURCE_
+
+<android.location.Location: double getLatitude()> -> _SOURCE_
+<android.location.Location: double getLongitude()> -> _SOURCE_
+<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)> -> _SOURCE_
+
+<android.telephony.TelephonyManager: java.lang.String getDeviceId()> android.permission.READ_PHONE_STATE -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSubscriberId()> android.permission.READ_PHONE_STATE -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()> android.permission.READ_PHONE_STATE -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getLine1Number()> android.permission.READ_PHONE_STATE -> _SOURCE_
+
+<java.net.URLConnection: java.io.InputStream getInputStream()> -> _SOURCE_
+
+<java.net.URL: java.io.InputStream openStream()> -> _SOURCE_
+<java.net.URL: java.lang.Object getContent()> -> _SOURCE_
+<java.net.URL: java.lang.Object getContent(java.lang.Class[])> -> _SOURCE_
+
+<org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()> -> _SOURCE_
+
+% Covered by the EasyTaintWrapper given that the HttpEntity is tainted
+%<org.apache.http.util.EntityUtils: java.lang.String toString(org.apache.http.HttpEntity)> -> _SOURCE_
+%<org.apache.http.util.EntityUtils: java.lang.String toString(org.apache.http.HttpEntity,java.lang.String)> -> _SOURCE_
+%<org.apache.http.util.EntityUtils: byte[] toByteArray(org.apache.http.HttpEntity)> -> _SOURCE_
+%<org.apache.http.util.EntityUtils: java.lang.String getContentCharSet(org.apache.http.HttpEntity)> -> _SOURCE_
+
+% add Activity.getIntent() as source instead of the next methods to avoid duplicate results.
+%<android.content.Intent: java.lang.String getAction()> -> _SOURCE_
+%<android.content.Intent: boolean[] getBooleanArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: boolean getBooleanExtra(java.lang.String, boolean)> -> _SOURCE_
+%<android.content.Intent: android.os.Bundle getBundleExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: byte[] getByteArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: byte getByteExtra(java.lang.String, byte)> -> _SOURCE_
+%<android.content.Intent: java.util.Set getCategories()> -> _SOURCE_
+%<android.content.Intent: char[] getCharArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: char getCharExtra(java.lang.String, char)> -> _SOURCE_
+%<android.content.Intent: java.lang.CharSequence[] getCharSequenceArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.util.ArrayList getCharSequenceArrayListExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.lang.CharSequence getCharSequenceExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: android.content.ClipData getClipData()> -> _SOURCE_
+%<android.content.Intent: android.content.ComponentName getComponent()> -> _SOURCE_
+%<android.content.Intent: android.net.Uri getData()> -> _SOURCE_
+%<android.content.Intent: java.lang.String getDataString()> -> _SOURCE_
+%<android.content.Intent: double[] getDoubleArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: double getDoubleExtra(java.lang.String, double)> -> _SOURCE_
+%<android.content.Intent: android.os.Bundle getExtras()> -> _SOURCE_
+%<android.content.Intent: int getFlags()> -> _SOURCE_
+%<android.content.Intent: float[] getFloatArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: float getFloatExtra(java.lang.String, float)> -> _SOURCE_
+%<android.content.Intent: int[] getIntArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.util.ArrayList getIntegerArrayListExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: android.content.Intent getIntent(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: android.content.Intent getIntentOld(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: int getIntExtra(java.lang.String, int)> -> _SOURCE_
+%<android.content.Intent: long[] getLongArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: long getLongExtra(java.lang.String, long)> -> _SOURCE_
+%<android.content.Intent: java.lang.String getPackage()> -> _SOURCE_
+%<android.content.Intent: android.os.Parcelable[] getParcelableArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.util.ArrayList getParcelableArrayListExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: android.os.Parcelable getParcelableExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.lang.String getScheme()> -> _SOURCE_
+%<android.content.Intent: android.content.Intent getSelector()> -> _SOURCE_
+%<android.content.Intent: java.io.Serializable getSerializableExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: short[] getShortArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: short getShortExtra(java.lang.String, short)> -> _SOURCE_
+%<android.content.Intent: android.graphics.Rect getSourceBounds()> -> _SOURCE_
+%<android.content.Intent: java.lang.String[] getStringArrayExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.util.ArrayList getStringArrayListExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.lang.String getStringExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: java.lang.String getType()> -> _SOURCE_
+
+%<android.content.Intent: void <init>()> -> _SOURCE_
+%<android.content.Intent: void <init>(android.content.Intent)> -> _SOURCE_
+%<android.content.Intent: void <init>(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: void <init>(java.lang.String,android.net.Uri)> -> _SOURCE_
+%<android.content.Intent: void <init>(android.content.Context,java.lang.Class)> -> _SOURCE_
+%<android.content.Intent: void <init>(java.lang.String,android.net.Uri,android.content.Context,java.lang.Class)> -> _SOURCE_
+
+%bundle sources
+% do not consider them as sources, because we have the callback parameters from
+% which the apps obtain the bundles as sources anyway
+%<android.os.Bundle: java.lang.Object get(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: boolean getBoolean(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: boolean getBoolean(java.lang.String,boolean)> -> _SOURCE_
+%<android.os.Bundle: boolean[] getBooleanArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: android.os.Bundle getBundle(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: byte getByte(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.lang.Byte getByte(java.lang.String,byte)> -> _SOURCE_
+%<android.os.Bundle: byte[] getByteArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: char getChar(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: char getChar(java.lang.String,char)> -> _SOURCE_
+%<android.os.Bundle: char[] getCharArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.lang.CharSequence getCharSequence(java.lang.String,java.lang.CharSequence)> -> _SOURCE_
+%<android.os.Bundle: java.lang.CharSequence getCharSequence(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.lang.CharSequence[] getCharSequenceArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.util.ArrayList getCharSequenceArrayList(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.lang.ClassLoader getClassLoader()> -> _SOURCE_
+%<android.os.Bundle: double getDouble(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: double getDouble(java.lang.String,double)> -> _SOURCE_
+%<android.os.Bundle: double[] getDoubleArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: float getFloat(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: float getFloat(java.lang.String,float)> -> _SOURCE_
+%<android.os.Bundle: float[] getFloatArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: int getInt(java.lang.String,int)> -> _SOURCE_
+%<android.os.Bundle: int getInt(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: int[] getIntArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.util.ArrayList getIntegerArrayList(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: long getLong(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: long getLong(java.lang.String,long)> -> _SOURCE_
+%<android.os.Bundle: long[] getLongArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: android.os.Parcelable getParcelable(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: android.os.Parcelable[] getParcelableArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.util.ArrayList getParcelableArrayList(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.io.Serializable getSerializable(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: short getShort(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: short getShort(java.lang.String,short)> -> _SOURCE_
+%<android.os.Bundle: short[] getShortArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: android.util.SparseArray getSparseParcelableArray(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.lang.String getString(java.lang.String)> -> _SOURCE_
+%<android.os.Bundle: java.util.ArrayList getStringArrayList(java.lang.String key)> -> _SOURCE_
+
+
+<android.media.AudioRecord: int read(short[],int,int)> -> _SOURCE_
+<android.media.AudioRecord: int read(byte[],int,int)> -> _SOURCE_
+<android.media.AudioRecord: int read(java.nio.ByteBuffer,int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List getInstalledApplications(int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List getInstalledPackages(int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List queryIntentActivities(android.content.Intent,int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List queryBroadcastReceivers(android.content.Intent,int)> -> _SOURCE_
+<android.content.pm.PackageManager: java.util.List queryContentProviders(java.lang.String,int,int)> -> _SOURCE_
+
+<android.content.SharedPreferences: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)> -> _SOURCE_
+
+
+<android.bluetooth.BluetoothAdapter: java.lang.String getAddress()> -> _SOURCE_
+<android.net.wifi.WifiInfo: java.lang.String getMacAddress()> -> _SOURCE_
+<java.util.Locale: java.lang.String getCountry()> -> _SOURCE_
+<android.net.wifi.WifiInfo: java.lang.String getSSID()> -> _SOURCE_
+<android.telephony.gsm.GsmCellLocation: int getCid()> -> _SOURCE_
+<android.telephony.gsm.GsmCellLocation: int getLac()> -> _SOURCE_
+
+<android.accounts.AccountManager: android.accounts.Account[] getAccounts()> -> _SOURCE_
+<java.util.Calendar: java.util.TimeZone getTimeZone()> -> _SOURCE_
+<android.provider.Browser: android.database.Cursor getAllBookmarks()> -> _SOURCE_
+<android.provider.Browser: android.database.Cursor getAllVisitedUrls()> -> _SOURCE_
+
+<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> -> _SOURCE_
+<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,android.os.CancellationSignal)> -> _SOURCE_
+
+% <android.app.Activity: android.view.View findViewById(int)> -> _SOURCE_
+<android.database.Cursor: java.lang.String getString(int)> -> _SOURCE_
+<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> -> _SOURCE_
+<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,android.os.CancellationSignal)> -> _SOURCE_
+
+% USER INPUT SOURCE
+% EditText and TextView sources
+<android.widget.EditText: android.text.Editable getText()> -> _SOURCE_
+<android.widget.EditText: java.lang.String getHint()> -> _SOURCE_
+<android.widget.TextView: java.lang.CharSequence getText()> -> _SOURCE_
+<android.widget.TextView: android.text.Editable getEditableText()> -> _SOURCE_
+<android.widget.TextView: java.lang.CharSequence getHint()> -> _SOURCE_
+<android.widget.TextView: java.lang.String toString()> -> _SOURCE_
+<android.widget.AutoCompleteTextView: android.text.Editable getText()> -> _SOURCE_
+<android.widget.MultiAutoCompleteTextView: android.text.Editable getText()> -> _SOURCE_
+
+% TextInputLayout (Material Design components)
+<com.google.android.material.textfield.TextInputLayout: android.widget.EditText getEditText()> -> _SOURCE_
+<com.google.android.material.textfield.TextInputEditText: android.text.Editable getText()> -> _SOURCE_
+<com.google.android.material.textfield.TextInputEditText: java.lang.CharSequence getHint()> -> _SOURCE_
+
+% Text watchers and listeners
+<android.text.TextWatcher: void afterTextChanged(android.text.Editable)> -> _SOURCE_
+<android.text.TextWatcher: void beforeTextChanged(java.lang.CharSequence,int,int,int)> -> _SOURCE_
+<android.text.TextWatcher: void onTextChanged(java.lang.CharSequence,int,int,int)> -> _SOURCE_
+<android.widget.TextView$OnEditorActionListener: boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent)> -> _SOURCE_
+
+% SearchView
+<android.widget.SearchView: java.lang.CharSequence getQuery()> -> _SOURCE_
+<android.widget.SearchView$OnQueryTextListener: boolean onQueryTextChange(java.lang.String)> -> _SOURCE_
+<android.widget.SearchView$OnQueryTextListener: boolean onQueryTextSubmit(java.lang.String)> -> _SOURCE_
+<androidx.appcompat.widget.SearchView: java.lang.CharSequence getQuery()> -> _SOURCE_
+<androidx.appcompat.widget.SearchView$OnQueryTextListener: boolean onQueryTextChange(java.lang.String)> -> _SOURCE_
+<androidx.appcompat.widget.SearchView$OnQueryTextListener: boolean onQueryTextSubmit(java.lang.String)> -> _SOURCE_
+
+% Input methods and keyboard events
+<android.view.inputmethod.InputConnection: android.text.Editable getEditable()> -> _SOURCE_
+<android.view.inputmethod.InputMethodManager: android.view.inputmethod.ExtractedText getExtractedText(android.view.View,android.view.inputmethod.ExtractedTextRequest,int)> -> _SOURCE_
+<android.view.KeyEvent: int getUnicodeChar()> -> _SOURCE_
+<android.view.KeyEvent: int getUnicodeChar(int)> -> _SOURCE_
+
+% EditText subclasses and third-party input fields
+<com.google.android.material.textfield.TextInputEditText: android.text.Editable getText()> -> _SOURCE_
+<com.rengwuxian.materialedittext.MaterialEditText: android.text.Editable getText()> -> _SOURCE_
+<com.andreabaccega.widget.FormEditText: android.text.Editable getText()> -> _SOURCE_
+<io.github.florent37.materialtextfield.MaterialTextField: android.widget.EditText getEditText()> -> _SOURCE_
+<com.github.pinball83.maskededittext.MaskedEditText: java.lang.String getRawText()> -> _SOURCE_
+<com.santalu.maskedittext.MaskEditText: java.lang.String getRawText()> -> _SOURCE_
+<com.github.reinaldoarrosi.maskededittext.MaskedEditText: java.lang.String getRawText()> -> _SOURCE_
+
+% Form components
+<android.widget.AutoCompleteTextView: java.lang.Object getSelectedItem()> -> _SOURCE_
+<android.widget.Spinner: java.lang.Object getSelectedItem()> -> _SOURCE_
+<android.widget.RadioGroup: int getCheckedRadioButtonId()> -> _SOURCE_
+<android.widget.CheckBox: boolean isChecked()> -> _SOURCE_
+<android.widget.CompoundButton: boolean isChecked()> -> _SOURCE_
+<android.widget.RatingBar: float getRating()> -> _SOURCE_
+<android.widget.SeekBar: int getProgress()> -> _SOURCE_
+<android.widget.NumberPicker: int getValue()> -> _SOURCE_
+
+% Date/Time pickers
+<android.widget.DatePicker: int getDayOfMonth()> -> _SOURCE_
+<android.widget.DatePicker: int getMonth()> -> _SOURCE_
+<android.widget.DatePicker: int getYear()> -> _SOURCE_
+<android.widget.TimePicker: int getHour()> -> _SOURCE_
+<android.widget.TimePicker: int getMinute()> -> _SOURCE_
+<com.wdullaer.materialdatetimepicker.date.DatePickerDialog: java.util.Calendar getSelectedDay()> -> _SOURCE_
+<com.wdullaer.materialdatetimepicker.time.TimePickerDialog: java.util.Timepoint getSelectedTime()> -> _SOURCE_
+
+% Modern material date pickers
+<com.google.android.material.datepicker.MaterialDatePicker: java.lang.Object getSelection()> -> _SOURCE_
+<com.google.android.material.datepicker.MaterialTextInputPicker: java.lang.Object getSelection()> -> _SOURCE_
+<com.google.android.material.timepicker.MaterialTimePicker: int getHour()> -> _SOURCE_
+<com.google.android.material.timepicker.MaterialTimePicker: int getMinute()> -> _SOURCE_
+
+% Custom text inputs from popular libraries
+% Material Components
+<com.google.android.material.chip.Chip: java.lang.CharSequence getText()> -> _SOURCE_
+<com.google.android.material.chip.ChipGroup: java.util.List getCheckedChipIds()> -> _SOURCE_
+
+
+% Credit card inputs
+<com.braintreepayments.cardform.view.CardForm: java.lang.String getCardNumber()> -> _SOURCE_
+<com.braintreepayments.cardform.view.CardForm: java.lang.String getCvv()> -> _SOURCE_
+<com.braintreepayments.cardform.view.CardForm: java.lang.String getExpirationDate()> -> _SOURCE_
+<com.braintreepayments.cardform.view.CardForm: java.lang.String getPostalCode()> -> _SOURCE_
+<com.stripe.android.view.CardInputWidget: com.stripe.android.model.Card getCard()> -> _SOURCE_
+<com.stripe.android.view.CardMultilineWidget: com.stripe.android.model.Card getCard()> -> _SOURCE_
+<io.card.payment.CardIOActivity: java.lang.String getScannedCardNumber()> -> _SOURCE_
+
+% Popular custom input fields
+<com.hootsuite.nachos.NachoTextView: java.util.List getChipValues()> -> _SOURCE_
+<com.linkedin.android.spyglass.ui.MentionsEditText: java.lang.String getText()> -> _SOURCE_
+<com.linkedin.android.spyglass.ui.RichEditorView: java.lang.String getText()> -> _SOURCE_
+
+% Pin entry and password fields
+<com.github.pinball83.maskededittext.MaskedEditText: java.lang.String getRawText()> -> _SOURCE_
+<com.alimuzaffar.lib.pin.PinEntryEditText: java.lang.String getText()> -> _SOURCE_
+<com.chaos.view.PinView: java.lang.String getText()> -> _SOURCE_
+<com.goodiebag.pinview.Pinview: java.lang.String getValue()> -> _SOURCE_
+<com.mukesh.OtpView: java.lang.String getText()> -> _SOURCE_
+<com.poovam.pinedittextfield.PinField: java.lang.String getText()> -> _SOURCE_
+
+% Rich text editors
+<jp.wasabeef.richeditor.RichEditor: java.lang.String getHtml()> -> _SOURCE_
+<com.github.irshulx.Editor: java.lang.String getContentAsSerialized()> -> _SOURCE_
+<com.github.irshulx.Editor: java.lang.String getContentAsHTML()> -> _SOURCE_
+<com.onegravity.rteditor.RTEditText: java.lang.String getText()> -> _SOURCE_
+<com.onegravity.rteditor.RTEditText: android.text.Spanned getSpanned()> -> _SOURCE_
+
+% Autocomplete inputs
+<com.mancj.materialsearchbar.MaterialSearchBar: java.lang.String getText()> -> _SOURCE_
+<com.mancj.materialsearchbar.MaterialSearchBar$OnSearchActionListener: void onSearchConfirmed(java.lang.CharSequence)> -> _SOURCE_
+<com.quinny898.library.persistentsearch.SearchBox: java.lang.String getSearchText()> -> _SOURCE_
+<com.lapism.searchview.SearchView: java.lang.CharSequence getQuery()> -> _SOURCE_
+
+% Dialog input sources
+<android.app.Dialog: java.lang.CharSequence getTitle()> -> _SOURCE_
+<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setTitle(java.lang.CharSequence)> -> _SOURCE_
+<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setMessage(java.lang.CharSequence)> -> _SOURCE_
+<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)> -> _SOURCE_
+<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setNegativeButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)> -> _SOURCE_
+<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setNeutralButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)> -> _SOURCE_
+<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setItems(java.lang.CharSequence[],android.content.DialogInterface$OnClickListener)> -> _SOURCE_
+<androidx.appcompat.app.AlertDialog$Builder: androidx.appcompat.app.AlertDialog$Builder setTitle(java.lang.CharSequence)> -> _SOURCE_
+<androidx.appcompat.app.AlertDialog$Builder: androidx.appcompat.app.AlertDialog$Builder setMessage(java.lang.CharSequence)> -> _SOURCE_
+<androidx.appcompat.app.AlertDialog$Builder: androidx.appcompat.app.AlertDialog$Builder setPositiveButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)> -> _SOURCE_
+<androidx.appcompat.app.AlertDialog$Builder: androidx.appcompat.app.AlertDialog$Builder setNegativeButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)> -> _SOURCE_
+<androidx.appcompat.app.AlertDialog$Builder: androidx.appcompat.app.AlertDialog$Builder setNeutralButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)> -> _SOURCE_
+<androidx.appcompat.app.AlertDialog$Builder: androidx.appcompat.app.AlertDialog$Builder setItems(java.lang.CharSequence[],android.content.DialogInterface$OnClickListener)> -> _SOURCE_
+
+% Dialog interfaces for input
+<android.content.DialogInterface$OnClickListener: void onClick(android.content.DialogInterface,int)> -> _SOURCE_
+<android.content.DialogInterface$OnMultiChoiceClickListener: void onClick(android.content.DialogInterface,int,boolean)> -> _SOURCE_
+
+% Material Dialog libraries
+<com.afollestad.materialdialogs.MaterialDialog: java.lang.String getInputField()> -> _SOURCE_
+<com.afollestad.materialdialogs.input.DialogInputExtKt: java.lang.String getInputField(com.afollestad.materialdialogs.MaterialDialog)> -> _SOURCE_
+<com.afollestad.materialdialogs.input.InputCallback: void onInput(com.afollestad.materialdialogs.MaterialDialog,java.lang.CharSequence)> -> _SOURCE_
+
+% EditText text manipulation methods
+<android.text.Editable: java.lang.String toString()> -> _SOURCE_
+<android.text.Editable: java.lang.CharSequence subSequence(int,int)> -> _SOURCE_
+<android.text.Editable: char charAt(int)> -> _SOURCE_
+<android.text.Editable: android.text.Editable replace(int,int,java.lang.CharSequence)> -> _SOURCE_
+<android.text.Editable: android.text.Editable replace(int,int,java.lang.CharSequence,int,int)> -> _SOURCE_
+<android.text.Editable: android.text.Editable insert(int,java.lang.CharSequence)> -> _SOURCE_
+<android.text.Editable: android.text.Editable insert(int,java.lang.CharSequence,int,int)> -> _SOURCE_
+<android.text.Editable: android.text.Editable delete(int,int)> -> _SOURCE_
+<android.text.Editable: android.text.Editable append(java.lang.CharSequence)> -> _SOURCE_
+<android.text.Editable: android.text.Editable append(java.lang.CharSequence,int,int)> -> _SOURCE_
+<android.text.Editable: android.text.Editable append(char)> -> _SOURCE_
+<android.text.Editable: android.text.Editable clear()> -> _SOURCE_
+<android.text.Editable: void clearSpans()> -> _SOURCE_
+<android.text.Editable: void setFilters(android.text.InputFilter[])> -> _SOURCE_
+
+% WebView input sources
+<android.webkit.WebView: java.lang.String getUrl()> -> _SOURCE_
+<android.webkit.WebView: java.lang.String getOriginalUrl()> -> _SOURCE_
+<android.webkit.WebView: java.lang.String getTitle()> -> _SOURCE_
+<android.webkit.WebChromeClient: void onReceivedTitle(android.webkit.WebView,java.lang.String)> -> _SOURCE_
+<android.webkit.WebViewClient: void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap)> -> _SOURCE_
+<android.webkit.WebViewClient: void onPageFinished(android.webkit.WebView,java.lang.String)> -> _SOURCE_
+<android.webkit.WebViewClient: boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String)> -> _SOURCE_
+<android.webkit.WebViewClient: boolean shouldOverrideUrlLoading(android.webkit.WebView,android.webkit.WebResourceRequest)> -> _SOURCE_
+<android.webkit.WebViewClient: void onReceivedError(android.webkit.WebView,android.webkit.WebResourceRequest,android.webkit.WebResourceError)> -> _SOURCE_
+<android.webkit.JavascriptInterface: java.lang.String toString()> -> _SOURCE_
+
+% Data binding sources
+<androidx.databinding.ObservableField: java.lang.Object get()> -> _SOURCE_
+<androidx.databinding.ObservableBoolean: boolean get()> -> _SOURCE_
+<androidx.databinding.ObservableByte: byte get()> -> _SOURCE_
+<androidx.databinding.ObservableChar: char get()> -> _SOURCE_
+<androidx.databinding.ObservableDouble: double get()> -> _SOURCE_
+<androidx.databinding.ObservableFloat: float get()> -> _SOURCE_
+<androidx.databinding.ObservableInt: int get()> -> _SOURCE_
+<androidx.databinding.ObservableLong: long get()> -> _SOURCE_
+<androidx.databinding.ObservableShort: short get()> -> _SOURCE_
+<androidx.databinding.ObservableArrayList: java.lang.Object get(int)> -> _SOURCE_
+<androidx.databinding.ObservableArrayMap: java.lang.Object get(java.lang.Object)> -> _SOURCE_
+
+% TouchListener and GestureDetector callbacks (may contain user input)
+<android.view.View$OnTouchListener: boolean onTouch(android.view.View,android.view.MotionEvent)> -> _SOURCE_
+<android.view.GestureDetector$OnGestureListener: boolean onSingleTapUp(android.view.MotionEvent)> -> _SOURCE_
+<android.view.GestureDetector$OnGestureListener: void onLongPress(android.view.MotionEvent)> -> _SOURCE_
+<android.view.GestureDetector$OnGestureListener: boolean onScroll(android.view.MotionEvent,android.view.MotionEvent,float,float)> -> _SOURCE_
+<android.view.GestureDetector$OnGestureListener: boolean onFling(android.view.MotionEvent,android.view.MotionEvent,float,float)> -> _SOURCE_
+<android.view.GestureDetector$OnDoubleTapListener: boolean onDoubleTap(android.view.MotionEvent)> -> _SOURCE_
+<android.view.GestureDetector$OnDoubleTapListener: boolean onDoubleTapEvent(android.view.MotionEvent)> -> _SOURCE_
+<android.view.GestureDetector$OnDoubleTapListener: boolean onSingleTapConfirmed(android.view.MotionEvent)> -> _SOURCE_
+
+% Content from clipboard
+<android.content.ClipboardManager: android.content.ClipData getPrimaryClip()> -> _SOURCE_
+<android.content.ClipData: android.content.ClipData$Item getItemAt(int)> -> _SOURCE_
+<android.content.ClipData$Item: java.lang.CharSequence getText()> -> _SOURCE_
+<android.content.ClipData$Item: java.lang.String getHtmlText()> -> _SOURCE_
+<android.content.ClipData$Item: android.content.Intent getIntent()> -> _SOURCE_
+<android.content.ClipData$Item: android.net.Uri getUri()> -> _SOURCE_
+
+% Drag and drop 
+<android.view.DragEvent: android.content.ClipData getClipData()> -> _SOURCE_
+<android.view.DragEvent: android.content.ClipDescription getClipDescription()> -> _SOURCE_
+<android.view.View$OnDragListener: boolean onDrag(android.view.View,android.view.DragEvent)> -> _SOURCE_
+
+% Navigation Component - arguments can contain user input
+<androidx.navigation.NavController: androidx.navigation.NavArgs getArgs()> -> _SOURCE_
+<androidx.navigation.NavBackStackEntry: android.os.Bundle getArguments()> -> _SOURCE_
+<androidx.navigation.NavDestination: android.os.Bundle getArguments()> -> _SOURCE_
+<androidx.navigation.fragment.FragmentNavigator$Destination: android.os.Bundle getArguments()> -> _SOURCE_
+
+% ViewModel LiveData sources (may contain user input)
+<androidx.lifecycle.LiveData: java.lang.Object getValue()> -> _SOURCE_
+<androidx.lifecycle.MutableLiveData: java.lang.Object getValue()> -> _SOURCE_
+<androidx.lifecycle.Observer: void onChanged(java.lang.Object)> -> _SOURCE_
+<androidx.lifecycle.MediatorLiveData: java.lang.Object getValue()> -> _SOURCE_
+<androidx.lifecycle.Transformations: androidx.lifecycle.LiveData map(androidx.lifecycle.LiveData,androidx.arch.core.util.Function)> -> _SOURCE_
+<androidx.lifecycle.Transformations: androidx.lifecycle.LiveData switchMap(androidx.lifecycle.LiveData,androidx.arch.core.util.Function)> -> _SOURCE_
+
+
+
+
